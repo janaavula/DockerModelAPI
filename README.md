@@ -1,3 +1,11 @@
-# HDImageRecognitionFlaskAPI
+# Deploy a model as a docker image and start a docker container
 
-- To install dependencies use environment.yaml file and create it with Conda (conda env create -f environment.yaml)
+- Install Docker
+- docker build -t predict-service . 
+- docker run -p 80:80 -t predict-service
+- docker run -it predict-service /bin/bash for troubleshooting in bash
+-  docker images
+- docker ps -a
+- look at the images folder for docker settings and postman settings
+
+
