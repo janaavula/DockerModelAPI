@@ -8,4 +8,4 @@
 - docker ps -a
 - look at the images folder for docker settings and postman settings
 
-
+- To upload large files https://git-lfs.github.com/
