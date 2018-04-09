@@ -1,4 +1,4 @@
-# Deploy a model as a docker image and start a docker container
+# Deploy a model as a docker image (With nginx, gunicorn , flask , keras model ) and start a docker container
 
 - Install Docker
 - docker build -t predict-service . 
