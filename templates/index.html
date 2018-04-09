@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Image classification</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <style type="text/css">
+    	body{text-align: center; margin:16px;}
+    </style>
+</head>
+<body>
+<div>
+	<H1>Image Classification</H1>
+  <h4>Please submit an image url in one of the (.JPG, .JPEG, .GIF, .PNG) format for one of the categories (hammer, flowerpot, thermostat, faucet)</h4>
+  <form onsubmit="return false">
+      <div class="form-group">
+        <input type="url" class="form-control" id="imageurl" placeholder="Upload Image URL" required>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg " id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing" type="submit">Submit</button>
+        <!-- <button class="btn btn-primary btn-lg" onclick="myFunction()" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing">Submit</button> -->
+  </form>
+  <div class="alert alert-danger" id="alertdanger">
+    <h6><span id="serverstatus"></span> <span id="serverresponse"></span></h6>
+    <h6 id="errortext">Please submit a valid url in .jpeg format</h6>
+  </div>
+  <h4 id="outputprob">The Machine Learning model predicted the submitted image as <b><span id="probcategory"></span></b> with a probability of <b><span id="probpercentage"></span></b> percentage </h4>
+  <h6 id="outputtext">The model predicted probabilites for all the categories are</h6>
+  <div id = "output">
+      <div>Faucet: <span id="probfaucet"></span></div>
+      <div>Hammer: <span id="probhammer"></span></div>
+      <div>Thermostats: <span id="probthermostats"></span></div>
+      <div>Flowerpots: <span id="probflowerpots"></span></div>
+  </div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+</body>
+</html>
